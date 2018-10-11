@@ -36,7 +36,10 @@ def device(device_id=None):
         'id': device_id,
         'codes': codes,
     }
-    return render_template('control.html', d=d)
+    if device_id == "PS3":
+        return render_template('ps3.html', d=d)
+    else:
+        return render_template('control.html', d=d)
 
 
 @app.route("/device/<device_id>/clicked/<op>")

@@ -1,278 +1,401 @@
 {% extends "base.html" %}
 {% block body %}
 <div data-role="page" data-title="Control" id="control" data-add-back-btn="true">
-	<div data-role="header" data-theme="b">
-		<h1>PS3 Remote Control</h1>
-		<h4>{{d.id}}</h4>
-	</div>
+    <div data-role="header" data-theme="b">
+        <h1>PS3 Remote Control</h1>
+        <h4>{{d.id}}</h4>
+    </div>
 
     <div data-role="content" style="text-shadow: none;">
-        
-        <div id ="remote">
-                <svg viewBox="0 0 200 540">
-                    <g opacity=".5">
-                        <rect x="0" y="0" width="200" height="600" fill="black" />
+
+        <div id="remote">
+            <svg viewBox="0 0 200 540">
+                <g opacity=".5">
+                    <rect x="0" y="0" width="200" height="600" fill="black" />
+                </g>
+                <text x="20" y="15" font-size="12" font-style="italic" fill="white">PLAYSTATION 3</text>
+                <g transform="translate(0, 30)">
+                    <g transform="translate(19,0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_EJECT');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
+                            <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="9" fill="white"
+                                class="fa">&#xF052;</text>
+                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">EJECT</text>
+                        </a>
                     </g>
-                
-                    <text x="20" y="15" font-size="12" font-style="italic" fill="white">PLAYSTATION 3</text>
-                
-                    <g transform="translate(0, 30)">
-                        <g transform="translate(19,0)" onclick="clickedOp('{{ d.id }}', 'KEY_EJECT');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
-                            <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="9" fill="white" class="fa">&#xf052;</text>
-                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle"  font-size="6" fill="white">EJECT</text>
-                        </g>
-                        <g transform="translate(63, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_1');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
-                            <text x="15" y="8" text-anchor="middle" alignment-baseline="middle"  font-size="9" fill="white">1</text>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_2');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                    <g transform="translate(63, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_1');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
+                            <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="9" fill="white">1</text>
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_2');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="9" fill="white">2</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_3');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_3');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="9" fill="white">3</text>
-                        </g>
+                        </a>
                     </g>
-                    <g transform="translate(0, 60)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_AUDIO');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
-                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle"  font-size="6" fill="white">AUDIO</text>
-                        </g>
-                        <g transform="translate(63, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_4');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0, 60)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_AUDIO');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
+                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">AUDIO</text>
+                        </a>
+                    </g>
+                    <g transform="translate(63, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_4');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">4</text>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_5');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_5');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">5</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_6');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_6');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">6</text>
-                        </g>
+                        </a>
                     </g>
-                    <g transform="translate(0, 90)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_ANGLE');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
-                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle"  font-size="6" fill="white">ANGLE</text>
-                        </g>
-                        <g transform="translate(63, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_7');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0, 90)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_ANGLE');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
+                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">ANGLE</text>
+                        </a>
+                    </g>
+                    <g transform="translate(63, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_7');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">7</text>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_8');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_8');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">8</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_9');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_9');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">9</text>
-                        </g>
+                        </a>
                     </g>
-                    <g transform="translate(0, 120)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_SUBTITLE');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
-                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle"  font-size="6" fill="white">SUBTITLE</text>
-                        </g>
-                        <g transform="translate(63, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_CLEAR');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0, 120)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_SUBTITLE');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
+                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SUBTITLE</text>
+                        </a>
+                    </g>
+                    <g transform="translate(63, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_CLEAR');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">CLEAR</text>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_0');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_0');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="8" text-anchor="middle" alignment-baseline="middle" font-size="10" fill="white">0</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_TIME');">
-                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_TIME');">
+                            <rect x="0" y="0" width="30" height="15" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">TIME</text>
-                        </g>
+                        </a>
                     </g>
-                    <g transform="translate(0, 150)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_RED');">
-                            <rect x="0" y="0" width="30" height="15" fill="red" stroke="gray"/>
-                        </g>
-                        <g transform="translate(63, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_GREEN');">
-                            <rect x="0" y="0" width="30" height="15" fill="green" stroke="gray"/>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_YELLOW');">
-                            <rect x="0" y="0" width="30" height="15" fill="yellow" stroke="gray"/>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_BLUE');">
-                            <rect x="0" y="0" width="30" height="15" fill="blue" stroke="gray"/>
-                        </g>
+                </g>
+                <g transform="translate(0, 150)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_RED');">
+                            <rect x="0" y="0" width="30" height="15" fill="red" stroke="gray" />
+                        </a>
                     </g>
-                    <g transform="translate(0,180)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_DISPLAY');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
+                    <g transform="translate(63, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_GREEN');">
+                            <rect x="0" y="0" width="30" height="15" fill="green" stroke="gray" />
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_YELLOW');">
+                            <rect x="0" y="0" width="30" height="15" fill="yellow" stroke="gray" />
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_BLUE');">
+                            <rect x="0" y="0" width="30" height="15" fill="blue" stroke="gray" />
+                        </a>
+                    </g>
+                </g>
+                <g transform="translate(0,180)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_DISPLAY');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">DISPLAY</text>
-                        </g>
-                        <g transform="translate(63, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_TOPMENU');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
-                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">TOP MENU</text>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_POPUPMENU');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
-                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">POP UP</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_RETURN');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(63, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_TOPMENU');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
+                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">TOP
+                                MENU</text>
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_POPUPMENU');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
+                            <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">POP
+                                UP</text>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_RETURN');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">RETURN</text>
-                            <text x="15.5" y="10" text-anchor="middle" alignment-baseline="middle" font-size="12" fill="white" class="fa">⤺</text>
-                        </g>
+                            <text x="15.5" y="10" text-anchor="middle" alignment-baseline="middle" font-size="12" fill="white"
+                                class="fa">&#x293A;</text>
+                        </a>
                     </g>
-                    <g transform="translate(0,220)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_OPTIONS');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0,220)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_OPTIONS');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">OPTIONS</text>
-                            <text x="15.5" y="10" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="green" class="fa">△</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_BACK');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
+                            <text x="15.5" y="10" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="green"
+                                class="fa">&#x25B3;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_BACK');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">BACK</text>
-                            <text x="15.5" y="11" class="far" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="red">&#xf111;</text>
-                        </g>
-                        <g transform="translate(49,0)">
-                            <circle cx="51" cy="51" r="51" fill="black" stroke="gray"/>
-                        </g>
-                        <g transform="translate(100,51)" onclick="clickedOp('{{ d.id }}', 'KEY_ENTER');">
-                            <circle cx="0" cy="0" r="20" fill="black" stroke="gray"/>
+                            <text x="15.5" y="11" class="far" text-anchor="middle" alignment-baseline="middle"
+                                font-size="14" fill="red">&#xF111;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(49,0)">
+                        <circle cx="51" cy="51" r="51" fill="black" stroke="gray" />
+                    </g>
+                    <g transform="translate(100,51)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_ENTER');">
+                            <circle cx="0" cy="0" r="20" fill="black" stroke="gray" />
                             <text x="0" y="2" text-anchor="middle" alignment-baseline="middle" font-size="8" fill="white">ENTER</text>
-                        </g>
-                        <g transform="translate(100, 2)" onclick="clickedOp('{{ d.id }}', 'KEY_UP');">
-                            <circle cx="0" cy="12.5" r="12.5" fill="black" stroke-width="0"/>
-                            <text x="0" y="13" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray" class="fas">&#xf062;</text>
-                        </g>
-                        <g transform="translate(51, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_LEFT');">
-                            <circle cx="12.5" cy="51" r="12.5" fill="black" stroke-width="0"/>
-                            <text x="12.5" y="49" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray" class="fas">&#xf060;</text>
-                        </g>
-                        <g transform="translate(124, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_RIGHT');">
-                            <circle cx="12.5" cy="51" r="12.5" fill="black" stroke-width="0"/>
-                            <text x="12.5" y="49" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray" class="fas">&#xf061;</text>
-                        </g>
-                        <g transform="translate(100, 75)" onclick="clickedOp('{{ d.id }}', 'KEY_DOWN');">
-                            <circle cx="0" cy="12.5" r="12.5" fill="black" stroke-width="0"/>
-                            <text x="0" y="10" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray" class="fas">&#xf063;</text>
-                        </g>
-                        <g transform="translate(19, 77)" onclick="clickedOp('{{ d.id }}', 'KEY_VIEW');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
+                        </a>
+                    </g>
+                    <g transform="translate(100, 2)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_UP');">
+                            <circle cx="0" cy="12.5" r="12.5" fill="black" stroke-width="0" />
+                            <text x="0" y="13" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray"
+                                class="fas">&#xF062;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(51, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_LEFT');">
+                            <circle cx="12.5" cy="51" r="12.5" fill="black" stroke-width="0" />
+                            <text x="12.5" y="49" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray"
+                                class="fas">&#xF060;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(124, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_RIGHT');">
+                            <circle cx="12.5" cy="51" r="12.5" fill="black" stroke-width="0" />
+                            <text x="12.5" y="49" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray"
+                                class="fas">&#xF061;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(100, 75)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_DOWN');">
+                            <circle cx="0" cy="12.5" r="12.5" fill="black" stroke-width="0" />
+                            <text x="0" y="10" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="gray"
+                                class="fas">&#xF063;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(19, 77)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_VIEW');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
                             <text x="15" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">VIEW</text>
-                            <text x="15.5" y="12" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="pink" class="far">&#xf0c8;</text>
-                        </g>
-                        <g transform="translate(151, 77)" onclick="clickedOp('{{ d.id }}', 'KEY_CROSS');">
-                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray"/>
-                            <text x="16" y="11.5" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="blue" class="fas">&#xf00d;</text>
-                        </g>
+                            <text x="15.5" y="12" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="pink"
+                                class="far">&#xF0C8;</text>
+                        </a>
                     </g>
-                
-                    <g transform="translate(0,335)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_L1');">
-                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7"/>
+                    <g transform="translate(151, 77)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_CROSS');">
+                            <circle cx="15.5" cy="12.5" r="12.5" fill="black" stroke="gray" />
+                            <text x="16" y="11.5" text-anchor="middle" alignment-baseline="middle" font-size="20" fill="blue"
+                                class="fas">&#xF00D;</text>
+                        </a>
+                    </g>
+                </g>
+                <g transform="translate(0,335)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_L1');">
+                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7" />
                             <text x="15" y="6" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">L1</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_R1');">
-                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7"/>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_R1');">
+                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7" />
                             <text x="15" y="6" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">R1</text>
-                        </g>
-                        <g transform="translate(82, 15)" onclick="clickedOp('{{ d.id }}', 'KEY_PS');">
-                            <circle cx="0" cy="0" r="15" fill="black" stroke="gray"/>
-                            <text x="0" y="-1" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fab">&#xf3df;</text>
-                        </g>
-                        <g transform="translate(117, 15)" onclick="clickedOp('{{ d.id }}', 'KEY_PS_LONG');">
-                            <circle cx="0" cy="0" r="15" fill="black" stroke="gray"/>
-                            <circle cx="0" cy="0" r="12" fill="none" stroke="white"/>
-                            <text x="0" y="-1" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="white" class="fab">&#xf3df;</text>
-                        </g>
+                        </a>
                     </g>
-                    <g transform="translate(0,355)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_L2');">
-                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7"/>
+                    <g transform="translate(82, 15)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_PS');">
+                            <circle cx="0" cy="0" r="15" fill="black" stroke="gray" />
+                            <text x="0" y="-1" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fab">&#xF3DF;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(117, 15)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_PS_LONG');">
+                            <circle cx="0" cy="0" r="15" fill="black" stroke="gray" />
+                            <circle cx="0" cy="0" r="12" fill="none" stroke="white" />
+                            <text x="0" y="-1" text-anchor="middle" alignment-baseline="middle" font-size="14" fill="white"
+                                class="fab">&#xF3DF;</text>
+                        </a>
+                    </g>
+                </g>
+                <g transform="translate(0,355)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_L2');">
+                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7" />
                             <text x="15" y="6" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">L2</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_R2');">
-                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7"/>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_R2');">
+                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7" />
                             <text x="15" y="6" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">R2</text>
-                        </g>
+                        </a>
                     </g>
-                    <g transform="translate(0,375)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_L3');">
-                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7"/>
+                </g>
+                <g transform="translate(0,375)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_L3');">
+                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7" />
                             <text x="15" y="6" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">L3</text>
-                        </g>
-                        <g transform="translate(73, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_SELECT');">
+                        </a>
+                    </g>
+                    <g transform="translate(73, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_SELECT');">
                             <text x="10" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SELECT</text>
-                            <rect x="0" y="0" width="20" height="10" fill="black" stroke="gray"/>
-                        </g>
-                        <g transform="translate(107, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_START');">
+                            <rect x="0" y="0" width="20" height="10" fill="black" stroke="gray" />
+                        </a>
+                    </g>
+                    <g transform="translate(107, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_START');">
                             <text x="10" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">START</text>
-                            <polygon points="0,0 0,10 20,5" fill="black" stroke="gray"/>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_R3');">
-                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7"/>
+                            <polygon points="0,0 0,10 20,5" fill="black" stroke="gray" />
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_R3');">
+                            <rect x="2.5" y="0" width="25" height="10" fill="black" stroke="gray" rx="7" ry="7" />
                             <text x="15" y="6" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">R3</text>
-                        </g>
+                        </a>
                     </g>
-                
-                    <g transform="translate(0,400)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_PREVIOUS');">
-                            <circle cx="17" cy="15" r="15" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0,400)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_PREVIOUS');">
+                            <circle cx="17" cy="15" r="15" fill="black" stroke="gray" />
                             <text x="17" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SCAN</text>
-                            <text x="16" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf04a;</text>
-                        </g>
-                        <g transform="translate(100, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_PLAY');">
-                            <rect x="-25" y="0" width="50" height="30" rx="15" ry="15" fill="black" stroke="gray"/>
+                            <text x="16" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF04A;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(100, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_PLAY');">
+                            <rect x="-25" y="0" width="50" height="30" rx="15" ry="15" fill="black" stroke="gray" />
                             <text x="0" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">PLAY</text>
-                            <text x="0" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf04b;</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_NEXT');">
-                            <circle cx="13" cy="15" r="15" fill="black" stroke="gray"/>
+                            <text x="0" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF04B;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_NEXT');">
+                            <circle cx="13" cy="15" r="15" fill="black" stroke="gray" />
                             <text x="13" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SCAN</text>
-                            <text x="14" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf04e;</text>
-                        </g>
+                            <text x="14" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF04E;</text>
+                        </a>
                     </g>
-                    <g transform="translate(0,445)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_CHAPTERDOWN');">
-                            <circle cx="17" cy="15" r="15" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0,445)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_CHAPTERDOWN');">
+                            <circle cx="17" cy="15" r="15" fill="black" stroke="gray" />
                             <text x="17" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">PREV</text>
-                            <text x="16" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf049;</text>
-                        </g>
-                        <g transform="translate(100, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_STOP');">
-                            <rect x="-25" y="0" width="50" height="30" rx="15" ry="15" fill="black" stroke="gray"/>
+                            <text x="16" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF049;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(100, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_STOP');">
+                            <rect x="-25" y="0" width="50" height="30" rx="15" ry="15" fill="black" stroke="gray" />
                             <text x="0" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">STOP</text>
-                            <text x="0" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf04d;</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_CHAPTERUP');">
-                            <circle cx="13" cy="15" r="15" fill="black" stroke="gray"/>
+                            <text x="0" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF04D;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_CHAPTERUP');">
+                            <circle cx="13" cy="15" r="15" fill="black" stroke="gray" />
                             <text x="13" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">NEXT</text>
-                            <text x="14" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf050;</text>
-                        </g>
+                            <text x="14" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF050;</text>
+                        </a>
                     </g>
-                    <g transform="translate(0,490)">
-                        <g transform="translate(19, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_REVERSE');">
-                            <circle cx="17" cy="15" r="15" fill="black" stroke="gray"/>
+                </g>
+                <g transform="translate(0,490)">
+                    <g transform="translate(19, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_REVERSE');">
+                            <circle cx="17" cy="15" r="15" fill="black" stroke="gray" />
                             <text x="17" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SLOW/STEP</text>
-                            <text x="16" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf048;</text>
-                        </g>
-                        <g transform="translate(100, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_PAUSE');">
-                            <rect x="-25" y="0" width="50" height="30" rx="15" ry="15" fill="black" stroke="gray"/>
-                            <text x="0" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">PAUSE</text>
-                            <text x="0" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf04c;</text>
-                        </g>
-                        <g transform="translate(151, 0)" onclick="clickedOp('{{ d.id }}', 'KEY_FORWARD');">
-                            <circle cx="13" cy="15" r="15" fill="black" stroke="gray"/>
-                            <text x="13" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SLOW/STEP</text>
-                            <text x="14" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white" class="fas">&#xf051;</text>
-                        </g>
+                            <text x="16" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF048;</text>
+                        </a>
                     </g>
-                </svg>
+                    <g transform="translate(100, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_PAUSE');">
+                            <rect x="-25" y="0" width="50" height="30" rx="15" ry="15" fill="black" stroke="gray" />
+                            <text x="0" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">PAUSE</text>
+                            <text x="0" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF04C;</text>
+                        </a>
+                    </g>
+                    <g transform="translate(151, 0)">
+                        <a onclick="clickedOp('{{ d.id }}', 'KEY_FORWARD');">
+                            <circle cx="13" cy="15" r="15" fill="black" stroke="gray" />
+                            <text x="13" y="-3" text-anchor="middle" alignment-baseline="middle" font-size="6" fill="white">SLOW/STEP</text>
+                            <text x="14" y="14" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="white"
+                                class="fas">&#xF051;</text>
+                        </a>
+                    </g>
+                </g>
+            </svg>
         </div>
         <ul data-role="listview" data-inset="true" data-icon="false">
             {% for c in d.codes %}
-                <li><a onclick="clickedOp('{{ d.id }}', '{{ c }}')">{{ c }}</a></li>
+            <li><a onclick="clickedOp('{{ d.id }}', '{{ c }}')">{{ c }}</a></li>
             {% endfor %}
         </ul>
     </div>
-</div>        
-{% endblock %}                           
+</div>
+{% endblock %}

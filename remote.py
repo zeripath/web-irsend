@@ -36,8 +36,10 @@ def device(device_id=None):
         'id': device_id,
         'codes': codes,
     }
-    if device_id == "PS3":
+    if device_id.lower() == "ps3":
         return render_template('ps3.html', d=d)
+    elif device_id.lower() == "arcam":
+        return render_template('arcam.html', d=d)
     else:
         return render_template('control.html', d=d)
 

@@ -37,12 +37,7 @@ def device(device_id=None):
         'id': device_id,
         'codes': codes,
     }
-    if device_id.lower() == "ps3":
-        return render_template('ps3.html', d=d)
-    elif device_id.lower() == "arcam":
-        return render_template('arcam.html', d=d)
-    else:
-        return render_template('control.html', d=d)
+    return render_template(["control_" + device_id.lower() + ".html", "control.html"], d=d)
 
 
 @app.route("/device/<device_id>/clicked/<op>")

@@ -9,6 +9,7 @@ from flask import request, redirect, url_for
 BASE_URL = ''
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # Initialise the Lirc config parser
 lircParse = Lirc('/etc/lirc/lircd.conf')

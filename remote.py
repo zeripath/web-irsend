@@ -4,7 +4,7 @@ import argparse
 from lirc.lirc import Lirc
 from flask import Flask
 from flask import render_template
-from flask import request, redirect, url_for
+# from flask import request, redirect, url_for
 
 BASE_URL = ''
 

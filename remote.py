@@ -37,7 +37,8 @@ def device(device_id=None):
         'id': device_id,
         'codes': codes,
     }
-    return render_template(["control_" + device_id.lower() + ".html", "control.html"], d=d)
+    return render_template(
+        ["control_" + device_id.lower() + ".html", "control.html"], d=d)
 
 
 @app.route("/device/<device_id>/clicked/<op>")
@@ -46,7 +47,6 @@ def clicked(device_id=None, op=None):
     lircParse.send_once(device_id, op)
 
     return ""
-
 
 
 if __name__ == "__main__":

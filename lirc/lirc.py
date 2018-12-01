@@ -13,7 +13,7 @@ class Lirc:
     def __init__(self, conf):
         # Open the config file and directory
         conflist = [conf]
-        conflist.extend(glob.glob(conf+".d/*.conf"))  # open lircd.conf.d config directory
+        conflist.extend(glob.glob(conf+".d/*.conf"))
         self.conf = fileinput.input(conflist, mode='r')
 
         # Parse the config file
@@ -35,49 +35,49 @@ class Lirc:
         codes_section = False
         raw_codes_section = False
 
-        for l in self.conf:
+        for line in self.conf:
             # Convert (multiple) tabs to spaces
-            l = re.sub(r'[ \t]+', ' ', l)
+            line = re.sub(r'[ \t]+', ' ', line)
             # Remove comments
-            l = re.sub(r'#.*', '', l)
+            line = re.sub(r'#.*', '', line)
             # Remove surrounding whitespaces
-            l = l.strip()
+            line = line.strip()
 
             # Look for a 'begin remote' line
-            if l == 'begin remote':
+            if line == 'begin remote':
                 # Got the start of a remote definition
                 remote_name = None
                 codes_section = False
                 raw_codes_section = False
 
-            elif not remote_name and l.startswith('name '):
+            elif not remote_name and line.startswith('name '):
                 # Got the name of the remote
-                remote_name = l.split(' ')[1]
+                remote_name = line.split(' ')[1]
                 if remote_name not in self.codes:
                     self.codes[remote_name] = set()
 
-            elif remote_name and l == 'end remote':
+            elif remote_name and line == 'end remote':
                 # Got to the end of a remote definition
                 remote_name = None
 
-            elif remote_name and l == 'begin codes':
+            elif remote_name and line == 'begin codes':
                 codes_section = True
 
-            elif remote_name and l == 'end codes':
+            elif remote_name and line == 'end codes':
                 codes_section = False
 
-            elif remote_name and l == 'begin raw_codes':
+            elif remote_name and line == 'begin raw_codes':
                 raw_codes_section = True
 
-            elif remote_name and l == 'end raw_codes':
+            elif remote_name and line == 'end raw_codes':
                 raw_codes_section = False
 
             elif remote_name and codes_section:
-                fields = l.split(' ')
+                fields = line.split(' ')
                 self.codes[remote_name].add(fields[0])
 
             elif remote_name and raw_codes_section:
-                fields = l.split(' ')
+                fields = line.split(' ')
                 if len(fields) >= 2 and fields[0] == 'name':
                     self.codes[remote_name].add(fields[1])
 
